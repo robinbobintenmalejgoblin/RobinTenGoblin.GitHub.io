@@ -1,0 +1,142 @@
+Put your HTML text here<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robin Ten Goblin | Portfolio</title>
+    <style>
+        :root {
+            --primary-green: #2ecc71;
+            --dark-green: #1b4d2e;
+            --bg-dark: #121212;
+            --text-light: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark-green), #000);
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-green);
+        }
+
+        .goblin-logo {
+            font-size: 4rem;
+            margin: 0;
+            color: var(--primary-green);
+            text-shadow: 2px 2px 10px rgba(46, 204, 113, 0.5);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-green);
+        }
+
+        .card h3 {
+            color: var(--primary-green);
+            margin-top: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-green);
+            color: black;
+            padding: 0.6rem 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Sekce pro maturitní přípravu (bonus) */
+        .study-box {
+            background: #252525;
+            padding: 1rem;
+            border-left: 5px solid gold;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="goblin-logo">👺 Robin Ten Goblin</h1>
+    <p>Díla vytvořená v hodinách informatiky a jiná gobliní dobrodružství.</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2>🛠️ Moje Projekty</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>LaTeX Dokument</h3>
+                <p>Můj velký dokument o literatuře 2. poloviny 20. století vytvořený v Overleafu.</p>
+                <a href="dokument.pdf" class="btn">Zobrazit PDF</a>
+            </div>
+
+            <div class="card">
+                <h3>Májovci, Ruchovci, Lumírovci</h3>
+                <p>Interaktivní přehled a tahák pro přípravu k maturitě z českého jazyka.</p>
+                <a href="#" class="btn">Spustit kvíz</a>
+            </div>
+
+            <div class="card">
+                <h3>Python Skripty</h3>
+                <p>Sbírka malých skriptů a algoritmů z hodin informatiky.</p>
+                <a href="https://github.com/RobinTenGoblin" class="btn">GitHub Repo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="study-box">
+        <h3>📚 Maturitní koutek</h3>
+        <p>Aktuálně se drtím: <strong>Májovci, Ruchovci, Lumírovci</strong></p>
+        <ul>
+            <li>Neruda (Písně kosmické)</li>
+            <li>Vrchlický (Zlomky epopeje)</li>
+            <li>Svatopluk Čech (Písně otroka)</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    &copy; 2024 RobinTenGoblin | Vytvořeno v hodinách IVT
+</footer>
+
+</body>
+</html>
