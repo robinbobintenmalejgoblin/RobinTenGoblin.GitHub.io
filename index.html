@@ -1,141 +1,71 @@
+<!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robin Ten Goblin | Portfolio</title>
+    <title>Dafiid Machar | MLG GOBLIN</title>
     <style>
-        :root {
-            --primary-green: #2ecc71;
-            --dark-green: #1b4d2e;
-            --bg-dark: #121212;
-            --text-light: #e0e0e0;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            margin: 0;
-            line-height: 1.6;
+            background-color: #000;
+            color: #0f0;
+            font-family: "Comic Sans MS", cursive;
+            overflow-x: hidden;
+            background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueXZueXZueXZueXZueXZueXZueXZueXZueXZueXZueXZueCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif');
         }
-
-        header {
-            background: linear-gradient(135deg, var(--dark-green), #000);
-            padding: 3rem 1rem;
+        .header {
             text-align: center;
-            border-bottom: 4px solid var(--primary-green);
+            animation: shake 0.5s infinite;
+        }
+        h1 { font-size: 5rem; color: #ff00ff; text-shadow: 5px 5px #00ffff; }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
         }
 
-        .goblin-logo {
-            font-size: 4rem;
-            margin: 0;
-            color: var(--primary-green);
-            text-shadow: 2px 2px 10px rgba(46, 204, 113, 0.5);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            background: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-green);
-        }
-
-        .card h3 {
-            color: var(--primary-green);
-            margin-top: 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary-green);
-            color: black;
-            padding: 0.6rem 1.2rem;
+        .mlg-btn {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            padding: 20px 40px;
+            font-size: 2rem;
+            color: white;
+            border: 5px solid white;
+            cursor: pointer;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: bold;
-            margin-top: 1rem;
+            margin: 20px;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            color: #666;
+        .alc-btn {
+            background: #ff0000;
+            color: yellow;
+            font-family: "Impact";
+            padding: 10px;
+            text-decoration: none;
+            border: 3px dotted white;
         }
 
-        /* Sekce pro maturitní přípravu (bonus) */
-        .study-box {
-            background: #252525;
-            padding: 1rem;
-            border-left: 5px solid gold;
-            margin-top: 3rem;
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>DAFIID MACHAR</h1>
+        <p style="font-size: 20px; background: black; display: inline-block;">SAMPLE TEXT - 360 NOSCOPE - MOM GET THE CAMERA</p>
+    </div>
 
-<header>
-    <h1 class="goblin-logo">👺 Robin Ten Goblin</h1>
-    <p>Díla vytvořená v hodinách informatiky a jiná gobliní dobrodružství.</p>
-</header>
+    <div class="content">
+        <a href="dokument_epstyna.pdf" class="btn mlg-btn">DOWNLOAD LITERATURA.EXE</a>
+        <br><br>
+        <a href="alcoholic.html" class="alc-btn">⚠️ ACTIVATE ALCOHOLIC MODE ⚠️</a>
+    </div>
 
-<div class="container">
-    <section>
-        <h2>🛠️ Moje Projekty</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>LaTeX Dokument</h3>
-                <p>Můj velký dokument o literatuře 2. poloviny 20. století vytvořený v Overleafu.</p>
-                <a href="dokument.pdf" class="btn">Zobrazit PDF</a>
-            </div>
-
-            <div class="card">
-                <h3>Májovci, Ruchovci, Lumírovci</h3>
-                <p>Interaktivní přehled a tahák pro přípravu k maturitě z českého jazyka.</p>
-                <a href="#" class="btn">Spustit kvíz</a>
-            </div>
-
-            <div class="card">
-                <h3>Python Skripty</h3>
-                <p>Sbírka malých skriptů a algoritmů z hodin informatiky.</p>
-                <a href="https://github.com/RobinTenGoblin" class="btn">GitHub Repo</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="study-box">
-        <h3>📚 Maturitní koutek</h3>
-        <p>Aktuálně se drtím: <strong>Májovci, Ruchovci, Lumírovci</strong></p>
-        <ul>
-            <li>Neruda (Písně kosmické)</li>
-            <li>Vrchlický (Zlomky epopeje)</li>
-            <li>Svatopluk Čech (Písně otroka)</li>
-        </ul>
-    </section>
-</div>
-
-<footer>
-    &copy; 2024 RobinTenGoblin | Vytvořeno v hodinách IVT
-</footer>
-
+    <marquee scrollamount="20" style="font-size: 50px; color: yellow;">$ $ $ GET REKT $ $ $ NOOB $ $ $ 420 BLAZE IT $ $ $</marquee>
 </body>
 </html>
