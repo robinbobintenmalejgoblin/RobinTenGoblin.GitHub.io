@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>MATURITA STRIKES BACK | 360 QUIZ</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #f0f;
+            font-family: "Impact", sans-serif;
+            text-align: center;
+            background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRydHh5M3R4eDN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4JlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LpLd2NGvpaiys/giphy.gif');
+            overflow: hidden;
+        }
+        .quiz-container {
+            background: rgba(0,0,0,0.9);
+            border: 10px dashed #0f0;
+            width: 80%;
+            margin: 50px auto;
+            padding: 30px;
+            animation: shake 0.5s infinite;
+        }
+        .question { font-size: 2rem; color: yellow; margin-bottom: 20px; }
+        .options { display: flex; flex-direction: column; gap: 10px; }
+        .opt-btn {
+            background: blue; color: white; border: 3px solid white;
+            padding: 15px; font-size: 1.5rem; cursor: pointer;
+        }
+        .opt-btn:hover { background: red; transform: scale(1.1); }
+        
+        #fail-screen {
+            display: none;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: red; color: black; z-index: 1000;
+            justify-content: center; align-items: center; flex-direction: column;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            50% { transform: translate(-3px, 2px) rotate(1deg); }
+            100% { transform: translate(1px, -1px) rotate(-1deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quiz" class="quiz-container">
+        <h1 style="color: cyan;">⚠️ MATURITNÍ TEST 2026 ⚠️</h1>
+        <div class="question" id="q-text">Načítám otázku z Matrixu...</div>
+        <div class="options">
+            <button class="opt-btn" onclick="wrong()">Odpověď A</button>
+            <button class="opt-btn" onclick="wrong()">Odpověď B</button>
+            <button class="opt-btn" onclick="wrong()">Odpověď C</button>
+            <button class="opt-btn" onclick="wrong()">Big Chungus</button>
+        </div>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRydHh5M3R4eDN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4JlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6uGhT1O4sxPi8/giphy.gif" width="200">
+    </div>
+
+    <div id="fail-screen">
+        <h1 style="font-size: 100px;">GET REKT NOOB</h1>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif" width="500">
+        <h2>DOSTAL JSI ZA 5. JDI DO HOSPODY.</h2>
+        <a href="index.html" style="font-size: 30px; color: white;">Zkusit znovu přežít</a>
+    </div>
+
+    <script>
+        const questions = [
+            "Kdo napsal Babičku, pokud byl Jan Neruda ve skutečnosti robot?",
+            "Kolik piv vypije průměrný Lumírovec za 360 noscope?",
+            "Pokud George Orwell viděl 1984, viděl i Big Chunguse?",
+            "Je Václav Havel skin v Fortnite?",
+            "Májovci vs Ruchovci: Kdo vyhraje v kleci (MMA)?"
+        ];
+
+        function nextQuestion() {
+            document.getElementById('q-text').innerText = questions[Math.floor(Math.random() * questions.length)];
+        }
+
+        function wrong() {
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('fail-screen').style.display = 'flex';
+        }
+
+        nextQuestion();
+    </script>
+
+</body>
+</html>
