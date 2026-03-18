@@ -2,32 +2,129 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>Slevy Pivo 24/7!!!</title>
+    <title>Slevy Pivo 24/7!!! BEZPECNA JIZDA</title>
     <style>
-        body { background-color: #5c4033; color: #ffff00; font-family: "Times New Roman", serif; cursor: progress; text-align: center; }
-        .sketchy-container {
-            border: 15px solid red; background: #eee; color: black;
-            width: 280px; margin: 30px auto; padding: 15px; transform: rotate(-3deg);
+        body {
+            /* POV Driving GIF Background */
+            background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffff00;
+            font-family: "Comic Sans MS", cursive;
+            margin: 0;
+            overflow: hidden;
+            cursor: progress;
         }
-        .ad { background: yellow; border: 2px solid blue; margin: 5px 0; font-weight: bold; animation: blink 0.5s infinite; }
-        .back-link { font-size: 12px; color: blue; background: white; padding: 3px; text-decoration: underline; cursor: pointer; }
-        @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+
+        /* The Drunk Shake Effect on everything */
+        .drunk-overlay {
+            width: 100vw;
+            height: 100vh;
+            animation: vision-blur 2s infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sketchy-container {
+            border: 10px solid #f00;
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            width: 350px;
+            padding: 20px;
+            text-align: center;
+            animation: shake 0.1s infinite, rotate 4s infinite linear;
+        }
+
+        .duff-hand {
+            position: fixed;
+            bottom: -20px;
+            right: 10%;
+            width: 400px;
+            z-index: 999;
+            pointer-events: none;
+            animation: drink-bob 1.5s infinite ease-in-out;
+        }
+
+        .ad-flash {
+            background: yellow;
+            color: red;
+            font-weight: bold;
+            font-size: 25px;
+            animation: blink 0.2s infinite;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 20px;
+            color: white;
+            background: blue;
+            padding: 10px;
+            text-decoration: blink;
+            font-weight: bold;
+            border: 5px outset white;
+        }
+
+        /* Animations */
+        @keyframes vision-blur {
+            0% { filter: blur(0px) hue-rotate(0deg); transform: scale(1); }
+            50% { filter: blur(4px) hue-rotate(90deg); transform: scale(1.1); }
+            100% { filter: blur(0px) hue-rotate(360deg); transform: scale(1); }
+        }
+
+        @keyframes shake {
+            0% { transform: translate(2px, 2px); }
+            50% { transform: translate(-2px, -2px); }
+            100% { transform: translate(2px, -2px); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(5deg); }
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @keyframes drink-bob {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-50px) rotate(-10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        marquee {
+            background: rgba(255, 0, 0, 0.7);
+            font-size: 30px;
+            position: absolute;
+            top: 0;
+        }
     </style>
 </head>
 <body>
-    <h1>Dafiid... Machar... Pivo...</h1>
-    <p>Stránka se načítá (asi, mozna)...</p>
+
+<marquee scrollamount="30">POZOR!!! KONTROLA POLICIE !!! JEĎ RYCHLEJI !!! PIVO JE PALIVO !!!</marquee>
+
+<div class="drunk-overlay">
     
     <div class="sketchy-container">
-        <div class="ad">!!! VYHRÁLI JSTE BRANÍK 2L + VIRUS !!!</div>
-        <h2>MATURITA 2024</h2>
-        <p>Error 404: Peníze na hosting propity v nonstopáči.</p>
-        <br>
-        <a href="index.html" class="back-link">vratit se do reality (triztrizve)</a>
+        <div class="ad-flash">!!! VYHRAL SI 12x BRANIK !!!</div>
+        <h1 style="font-size: 40px;">Dafiid Machar Portfolio</h1>
+        <p>Stav konta: -420.69 Kč</p>
+        <p><i>"Řídím líp když sem v náladě"</i> - Robin Ten Goblin, 2026</p>
+        
+        <a href="index.html" class="back-link">ODVÉST SE DOMŮ (STŘÍZLIVĚT)</a>
     </div>
 
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcm5mNnR4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4JlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o85xHktyE0FeBvKik/giphy.gif" width="180">
-    
-    <p style="font-size: 9px; color: #aaa;">Tato stránka mozna obsahuje viry. Klikni sem pro levný rum.</p>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmN4eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3o7TKVUn7iM8FMEU24/giphy.gif" class="duff-hand" alt="Duff Beer">
+
+</div>
+
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/l0HlS9rIhzW5f5f44/giphy.gif" style="position:fixed; top:10%; left:5%; width:100px; animation: shake 0.2s infinite;">
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/l0HlS9rIhzW5f5f44/giphy.gif" style="position:fixed; top:50%; right:5%; width:100px; animation: shake 0.3s infinite;">
+
 </body>
 </html>
