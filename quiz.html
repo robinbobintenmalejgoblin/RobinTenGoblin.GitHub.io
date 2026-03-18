@@ -2,58 +2,48 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>ULTIMATE BULLSHIT QUIZ</title>
+    <title>QUIZ | DANK EDITION</title>
     <style>
         body { background: #000; color: #0f0; font-family: "Impact", sans-serif; text-align: center; overflow: hidden; }
-        .box { border: 10px solid #0f0; background: rgba(0,0,0,0.9); margin: 50px auto; padding: 20px; max-width: 700px; animation: shake 0.05s infinite; }
+        .box { border: 10px solid #0f0; background: rgba(0,0,0,0.9); margin: 50px auto; padding: 20px; max-width: 600px; animation: shake 0.05s infinite; }
         .opt { display: block; width: 100%; padding: 15px; margin: 10px 0; background: #00f; color: #fff; font-size: 1.5rem; border: 4px solid #fff; cursor: pointer; }
         #fail { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: red; z-index: 100; flex-direction: column; justify-content: center; align-items: center; }
-        @keyframes shake { 0% { transform: translate(5px, 5px); } 100% { transform: translate(-5px, -5px); } }
+        @keyframes shake { 0% { transform: translate(3px, 3px); } 100% { transform: translate(-3px, -3px); } }
     </style>
 </head>
 <body>
 
 <div id="game" class="box">
-    <h1 style="color: yellow; font-size: 3rem;">MATURITNÍ PEKLO 2026</h1>
-    <h2 id="q" style="color: cyan;">Načítám sračky...</h2>
+    <h1 style="color: yellow;">MATURITA QUIZ 2026</h1>
+    <h2 id="question">Načítám...</h2>
     <div id="answers"></div>
 </div>
 
 <div id="fail">
-    <h1 style="font-size: 8rem; color: black;">L + RATIO + NOOB</h1>
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif" width="600">
-    <a href="index.html" style="font-size: 3rem; color: white;">Zkusit znovu přežít</a>
+    <h1 style="font-size: 5rem; color: black;">L + RATIO + NOOB</h1>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRydHh5M3R4eDN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4JlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6uGhT1O4sxPi8/giphy.gif" width="400">
+    <br>
+    <a href="index.html" style="font-size: 2rem; color: white; background: black; padding: 10px;">Zkusit znovu</a>
 </div>
 
 <script>
-    const questions = [
-        "Kdo napsal Máj, pokud byl Karel Hynek Mácha ve skutečnosti Big Chungus?",
-        "Kolik Mountain Dew vypil Jan Neruda před 360 noscopem?",
-        "Je Molièrův Lakomec metaforou pro Pay-to-Win hry?",
-        "Měl Robinson Crusoe na ostrově dostatek weed?",
-        "Kolik hitmarkerů dostal Svatopluk Čech v bitvě u Lipan?"
-    ];
+    const questions = ["Kdo je Big Chungus literatury?", "Měl Jan Neruda 420 noscope?", "Je Braník v akci maturitní otázka?"];
+    const bs = ["360 Noscope", "Mom get the camera", "Smoke weed", "Sample Text", "Hitmarker"];
 
-    const bullshit = [
-        "420 noscope z balkonu", "Tvoje máma (XBOX LIVE)", "Smoke weed every day", 
-        "F*ck her right in the p*ssy", "Václav Havel v battle passu", "Braník ve slevě", 
-        "Hitmarker na hlavu", "3000 FPS v Minecraftu", "Big Chungus", "Shrek is love"
-    ];
-
-    function load() {
-        document.getElementById('q').innerText = questions[Math.floor(Math.random() * questions.length)];
-        let container = document.getElementById('answers');
-        container.innerHTML = "";
-        // Vygeneruje 4 náhodné odpovědi
+    window.onload = function() {
+        document.getElementById('question').innerText = questions[Math.floor(Math.random() * questions.length)];
+        let cont = document.getElementById('answers');
         for(let i=0; i<4; i++) {
             let b = document.createElement('button');
             b.className = "opt";
-            b.innerText = bullshit[Math.floor(Math.random() * bullshit.length)];
-            b.onclick = () => { document.getElementById('game').style.display = 'none'; document.getElementById('fail').style.display = 'flex'; };
-            container.appendChild(b);
+            b.innerText = bs[Math.floor(Math.random()*bs.length)];
+            b.onclick = function() {
+                document.getElementById('game').style.display = 'none';
+                document.getElementById('fail').style.display = 'flex';
+            };
+            cont.appendChild(b);
         }
-    }
-    load();
+    };
 </script>
 </body>
 </html>
