@@ -2,56 +2,43 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>DAFIID MACHAR | MLG PRO ELITE</title>
+    <title>DAFIID MACHAR | MLG GOD</title>
     <style>
         body {
-            background-color: #000;
+            margin: 0;
+            padding: 0;
+            background: #000 url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueXZueXZueXZueXZueXZueXZueXZueXZueXZueXZueXZueCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif') no-repeat center center fixed;
+            background-size: cover;
             color: #0f0;
             font-family: "Comic Sans MS", cursive;
-            margin: 0;
-            overflow-x: hidden;
-            background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRydHh5M3R4eDN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4JlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif');
-            background-size: cover;
-            background-attachment: fixed;
+            overflow: hidden;
         }
 
-        .main-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background: rgba(0, 0, 0, 0.5);
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
 
-        .header-box {
+        .header {
             animation: shake 0.1s infinite;
-            padding: 20px;
             border: 10px solid #f0f;
-            background: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 0 50px #0f0;
+            background: rgba(0,0,0,0.9);
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 0 100px #f0f;
         }
+
+        h1 { font-size: 5rem; color: #ff0; text-shadow: 5px 5px #f00; margin: 0; }
+
+        .btn-zone { margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }
 
         .btn {
-            display: block;
-            width: 400px;
-            padding: 20px;
-            margin: 10px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            text-align: center;
-            border: 5px solid #fff;
-            color: white;
+            padding: 20px 40px; font-size: 2rem; font-weight: bold;
+            text-decoration: none; border: 5px solid #fff; color: #fff;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 400%; animation: rainbow 2s infinite linear;
         }
-
-        .btn-main {
-            background: linear-gradient(90deg, red, yellow, lime, cyan, blue, magenta, red);
-            background-size: 600% 600%;
-            animation: rainbow 2s linear infinite;
-        }
-
-        .btn-alc { background: red; color: yellow; border-style: dotted; }
 
         @keyframes shake {
             0% { transform: translate(2px, 2px); }
@@ -59,34 +46,30 @@
             100% { transform: translate(2px, -2px); }
         }
 
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
+        @keyframes rainbow { 0% { background-position: 0%; } 100% { background-position: 100%; } }
 
-        /* GIFy */
-        .side-gif { position: fixed; width: 200px; z-index: 5; }
+        .gif { position: fixed; width: 250px; z-index: 10; pointer-events: none; }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueXZueXZueXZueXZueXZueXZueXZueXZueXZueXZueXZueCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif" class="side-gif" style="top:5%; left:5%;">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/l0HlS9rIhzW5f5f44/giphy.gif" class="side-gif" style="bottom:10%; right:5%;">
+<div class="overlay">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif" class="gif" style="top:0; left:0;">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRydHh5M3R4eDN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4JlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6uGhT1O4sxPi8/giphy.gif" class="gif" style="bottom:0; right:0;">
 
-        <div class="header-box">
-            <h1>DAFIID MACHAR</h1>
-            <p>360 NOSCOPE MATURITA EDITION</p>
-        </div>
-
-        <div style="margin-top: 30px;">
-            <a href="mo5.html" class="btn btn-main">MO5 DANK GUIDE</a>
-            <a href="quiz.html" class="btn btn-main">BULLSHIT QUIZ.EXE</a>
-            <a href="alcoholic.html" class="btn btn-alc">⚠️ ALCOHOLIC MODE ⚠️</a>
-        </div>
+    <div class="header">
+        <h1>DAFIID MACHAR</h1>
+        <p style="font-size: 30px; color: #0f0;">F*CK HER RIGHT IN THE P*SSY DUDE</p>
     </div>
 
-    <marquee scrollamount="20" style="font-size: 40px; color: yellow; background: black;">$$$ GET REKT $$$ BIG CHUNGUS $$$ SAMPLE TEXT $$$</marquee>
+    <div class="btn-zone">
+        <a href="mo5.html" class="btn">LITERATURA MO5.EXE</a>
+        <a href="quiz.html" class="btn">BULLSHIT QUIZ [DANK]</a>
+        <a href="alcoholic.html" class="btn" style="background: red; animation: shake 0.1s infinite;">ALCOHOLIC MODE</a>
+    </div>
+</div>
+
+<marquee scrollamount="30" style="position:fixed; bottom:0; font-size: 50px; color: yellow;">GET REKT NOOB $$$ 420 BLAZE IT $$$ NOSCOPE $$$ BIG CHUNGUS $$$</marquee>
 
 </body>
 </html>
