@@ -2,16 +2,14 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAFIID MACHAR | MLG PRO ELITE</title>
     <style>
         body {
             background-color: #000;
             color: #0f0;
-            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            font-family: "Comic Sans MS", cursive;
             margin: 0;
             overflow-x: hidden;
-            /* Pozadí - klasický MLG space trip */
             background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRydHh5M3R4eDN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4JlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif');
             background-size: cover;
             background-attachment: fixed;
@@ -23,8 +21,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .header-box {
@@ -33,121 +30,63 @@
             border: 10px solid #f0f;
             background: rgba(0, 0, 0, 0.9);
             box-shadow: 0 0 50px #0f0;
-            z-index: 10;
-        }
-
-        h1 {
-            font-size: 5.5rem;
-            color: #ff00ff;
-            text-shadow: 5px 5px #0ff, -5px -5px #ff0;
-            margin: 0;
-            filter: hue-rotate(90deg);
-        }
-
-        .button-zone {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-            max-width: 550px;
-            z-index: 10;
         }
 
         .btn {
             display: block;
-            padding: 25px;
-            font-size: 1.8rem;
+            width: 400px;
+            padding: 20px;
+            margin: 10px;
+            font-size: 1.5rem;
             font-weight: bold;
             text-decoration: none;
-            text-transform: uppercase;
-            border: 8px solid #fff;
-            transition: all 0.05s;
-            cursor: pointer;
+            text-align: center;
+            border: 5px solid #fff;
+            color: white;
         }
 
         .btn-main {
-            background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
-            background-size: 300% 300%;
-            animation: rainbow-bg 1s infinite linear;
-            color: #fff;
-            text-shadow: 3px 3px #000;
+            background: linear-gradient(90deg, red, yellow, lime, cyan, blue, magenta, red);
+            background-size: 600% 600%;
+            animation: rainbow 2s linear infinite;
         }
 
-        .btn-main:hover {
-            transform: scale(1.1) rotate(3deg);
-            filter: invert(1);
-        }
-
-        .btn-alcoholic {
-            background: #f00;
-            color: #ff0;
-            border: 5px dotted #fff;
-            animation: shake 0.2s infinite;
-        }
-
-        /* GIFY NA STRÁNCE */
-        .mlg-gif {
-            position: fixed;
-            width: 180px;
-            pointer-events: none;
-            z-index: 5;
-        }
+        .btn-alc { background: red; color: yellow; border-style: dotted; }
 
         @keyframes shake {
-            0% { transform: translate(2px, 2px) rotate(0deg); }
-            25% { transform: translate(-2px, -2px) rotate(1deg); }
-            50% { transform: translate(2px, -2px) rotate(-1deg); }
-            75% { transform: translate(-2px, 2px) rotate(0deg); }
-            100% { transform: translate(2px, 2px) rotate(0deg); }
+            0% { transform: translate(2px, 2px); }
+            50% { transform: translate(-2px, -2px); }
+            100% { transform: translate(2px, -2px); }
         }
 
-        @keyframes rainbow-bg {
+        @keyframes rainbow {
             0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
 
-        marquee {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: rgba(0, 255, 0, 0.9);
-            color: #000;
-            font-size: 2.5rem;
-            padding: 15px 0;
-            z-index: 20;
-        }
+        /* GIFy */
+        .side-gif { position: fixed; width: 200px; z-index: 5; }
     </style>
 </head>
 <body>
 
     <div class="main-container">
-        
-        <img src="http://googleusercontent.com/image_collection/image_retrieval/17551705999013417397_0" class="mlg-gif" style="top: 5%; left: 5%; width: 250px;">
-        
-        <img src="http://googleusercontent.com/image_collection/image_retrieval/2537550971387383032_0" class="mlg-gif" style="top: 5%; right: 5%;">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueXZueXZueXZueXZueXZueXZueXZueXZueXZueXZueXZueCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif" class="side-gif" style="top:5%; left:5%;">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/l0HlS9rIhzW5f5f44/giphy.gif" class="side-gif" style="bottom:10%; right:5%;">
 
         <div class="header-box">
             <h1>DAFIID MACHAR</h1>
-            <p style="color: yellow; font-size: 1.5rem; margin: 0;">NOSCOPE CHAMPION 2026</p>
+            <p>360 NOSCOPE MATURITA EDITION</p>
         </div>
 
-        <div class="button-zone">
-            <a href="mo5.html" class="btn btn-main">MO5 DANK GUIDE.EXE</a>
-            <a href="quiz.html" class="btn btn-main">IMPOSSIBLE MATURITA QUIZ</a>
-            <a href="alcoholic.html" class="btn btn-alcoholic">⚠️ ACTIVATE ALCOHOLIC MODE ⚠️</a>
+        <div style="margin-top: 30px;">
+            <a href="mo5.html" class="btn btn-main">MO5 DANK GUIDE</a>
+            <a href="quiz.html" class="btn btn-main">BULLSHIT QUIZ.EXE</a>
+            <a href="alcoholic.html" class="btn btn-alc">⚠️ ALCOHOLIC MODE ⚠️</a>
         </div>
-
-        <img src="http://googleusercontent.com/image_collection/image_retrieval/10509559384981256544_0" class="mlg-gif" style="bottom: 10%; left: 5%; width: 220px;">
-        
-        <img src="http://googleusercontent.com/image_collection/image_retrieval/17704269453364820683_0" class="mlg-gif" style="bottom: 15%; right: 8%;">
-
     </div>
 
-    <marquee scrollamount="30">
-        $$$ GET REKT NOOB $$$ 420 BLAZE IT $$$ MOM GET THE CAMERA $$$ BIG CHUNGUS IS WATCHING $$$ SAMPLE TEXT $$$
-    </marquee>
+    <marquee scrollamount="20" style="font-size: 40px; color: yellow; background: black;">$$$ GET REKT $$$ BIG CHUNGUS $$$ SAMPLE TEXT $$$</marquee>
 
 </body>
 </html>
