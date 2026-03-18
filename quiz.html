@@ -2,82 +2,58 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>IMPOSSIBLE QUIZ</title>
+    <title>ULTIMATE BULLSHIT QUIZ</title>
     <style>
-        body {
-            background: #000;
-            color: #0f0;
-            font-family: "Impact", sans-serif;
-            text-align: center;
-            overflow: hidden;
-        }
-        .container {
-            border: 10px solid #f0f;
-            background: rgba(0,0,0,0.8);
-            margin: 50px auto;
-            padding: 20px;
-            max-width: 600px;
-            animation: shake 0.1s infinite;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            background: blue;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            border: 3px solid white;
-        }
-        #fail {
-            display: none;
-            position: fixed; top:0; left:0; width:100%; height:100%;
-            background: red; color: black; z-index: 99;
-            flex-direction: column; align-items: center; justify-content: center;
-        }
-        @keyframes shake {
-            0% { transform: rotate(1deg); }
-            100% { transform: rotate(-1deg); }
-        }
+        body { background: #000; color: #0f0; font-family: "Impact", sans-serif; text-align: center; overflow: hidden; }
+        .box { border: 10px solid #0f0; background: rgba(0,0,0,0.9); margin: 50px auto; padding: 20px; max-width: 700px; animation: shake 0.05s infinite; }
+        .opt { display: block; width: 100%; padding: 15px; margin: 10px 0; background: #00f; color: #fff; font-size: 1.5rem; border: 4px solid #fff; cursor: pointer; }
+        #fail { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: red; z-index: 100; flex-direction: column; justify-content: center; align-items: center; }
+        @keyframes shake { 0% { transform: translate(5px, 5px); } 100% { transform: translate(-5px, -5px); } }
     </style>
 </head>
 <body>
 
-    <div id="quiz-box" class="container">
-        <h1 style="color: yellow;">MATURITA QUIZ 2026</h1>
-        <p id="question" style="font-size: 1.5rem;">Načítám...</p>
-        <div id="options">
-            <button class="btn" onclick="fail()">Odpověď A</button>
-            <button class="btn" onclick="fail()">Odpověď B</button>
-            <button class="btn" onclick="fail()">Big Chungus</button>
-            <button class="btn" onclick="fail()">420 Blaze it</button>
-        </div>
-    </div>
+<div id="game" class="box">
+    <h1 style="color: yellow; font-size: 3rem;">MATURITNÍ PEKLO 2026</h1>
+    <h2 id="q" style="color: cyan;">Načítám sračky...</h2>
+    <div id="answers"></div>
+</div>
 
-    <div id="fail">
-        <h1 style="font-size: 5rem;">GET REKT NOOB</h1>
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif" width="400">
-        <h2>DOSTAL JSI ZA 5. JDI DOMŮ.</h2>
-        <a href="index.html" style="color: white; font-size: 2rem;">Zkusit znovu</a>
-    </div>
+<div id="fail">
+    <h1 style="font-size: 8rem; color: black;">L + RATIO + NOOB</h1>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueW96eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eXJ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif" width="600">
+    <a href="index.html" style="font-size: 3rem; color: white;">Zkusit znovu přežít</a>
+</div>
 
-    <script>
-        const q = [
-            "Byl Jan Neruda ve skutečnosti Snoop Dogg?",
-            "Kolik Doritos snědl Molière před psaním Lakomce?",
-            "Je Robinson Crusoe první Battle Royale?",
-            "George Orwell 1984: Viděl tě včera ve sprše?"
-        ];
+<script>
+    const questions = [
+        "Kdo napsal Máj, pokud byl Karel Hynek Mácha ve skutečnosti Big Chungus?",
+        "Kolik Mountain Dew vypil Jan Neruda před 360 noscopem?",
+        "Je Molièrův Lakomec metaforou pro Pay-to-Win hry?",
+        "Měl Robinson Crusoe na ostrově dostatek weed?",
+        "Kolik hitmarkerů dostal Svatopluk Čech v bitvě u Lipan?"
+    ];
 
-        window.onload = function() {
-            document.getElementById('question').innerText = q[Math.floor(Math.random() * q.length)];
-        };
+    const bullshit = [
+        "420 noscope z balkonu", "Tvoje máma (XBOX LIVE)", "Smoke weed every day", 
+        "F*ck her right in the p*ssy", "Václav Havel v battle passu", "Braník ve slevě", 
+        "Hitmarker na hlavu", "3000 FPS v Minecraftu", "Big Chungus", "Shrek is love"
+    ];
 
-        function fail() {
-            document.getElementById('quiz-box').style.display = 'none';
-            document.getElementById('fail').style.display = 'flex';
+    function load() {
+        document.getElementById('q').innerText = questions[Math.floor(Math.random() * questions.length)];
+        let container = document.getElementById('answers');
+        container.innerHTML = "";
+        // Vygeneruje 4 náhodné odpovědi
+        for(let i=0; i<4; i++) {
+            let b = document.createElement('button');
+            b.className = "opt";
+            b.innerText = bullshit[Math.floor(Math.random() * bullshit.length)];
+            b.onclick = () => { document.getElementById('game').style.display = 'none'; document.getElementById('fail').style.display = 'flex'; };
+            container.appendChild(b);
         }
-    </script>
+    }
+    load();
+</script>
 </body>
 </html>
