@@ -2,68 +2,84 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <title>CPP - Filozofie Trůnu Robina Machy</title>
+    <title>OBLÍBENÉ MÍSTO | ROBIN MACHA</title>
     <style>
         body { 
+            margin: 0; padding: 20px;
             background: #000 url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRydHh5M3R4eDN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4ZzN4JlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKMGpxxcaOZYEOA/giphy.gif');
             background-size: cover;
             color: #fff;
             text-align: center;
-            font-family: "Times New Roman", serif;
-            margin: 0;
-            padding: 20px;
+            font-family: "Comic Sans MS", cursive;
         }
         .container { 
-            background: rgba(0,0,0,0.85); 
+            background: rgba(0,0,0,0.9); 
             padding: 30px; 
-            border: 5px solid gold; 
-            max-width: 900px;
+            border: 5px solid #0f0; 
+            max-width: 1000px;
             margin: 0 auto;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            box-shadow: 0 0 50px #0f0;
         }
-        h1 { color: gold; text-transform: uppercase; letter-spacing: 2px; }
-        .nature-link { 
+        /* MLG Tlačítko ZPĚT */
+        .btn-back {
             display: inline-block;
-            color: #0ff; 
-            font-size: 1.5rem; 
-            text-decoration: none; 
-            font-weight: bold; 
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 2px solid #0ff;
-        }
-        .nature-link:hover { 
-            background: #0ff; 
-            color: #000; 
-        }
-        iframe { 
-            border: 3px solid #fff; 
-            background: white;
-        }
-        .back-btn {
-            margin-top: 20px;
-            display: inline-block;
-            color: #aaa;
+            margin-bottom: 25px;
+            padding: 15px 40px;
+            background: linear-gradient(90deg, #f0f, #0ff, #f0f);
+            background-size: 200%;
+            color: white;
             text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border: 4px solid #fff;
+            animation: moveGradient 2s infinite linear, pulse 1s infinite alternate;
+        }
+        .btn-back:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        .nature-link { 
+            display: block;
+            color: #ff0; 
+            font-size: 1.3rem; 
+            text-decoration: none; 
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .nature-link:hover { text-decoration: underline; color: #fff; }
+        
+        iframe { 
+            border: 5px solid #fff;
+            background: white;
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Svatyně Osamění</h1>
-        <p><i>"Místo pro nejhlubší myšlenky Robina Machy."</i></p>
+        <a href="index.html" class="btn-back">⬅ ZPĚT NA HLAVNÍ STRÁNKU</a>
+
+        <h1 style="color: #0f0; font-size: 3rem;">MOJE FILOZOFICKÁ SVATYNĚ</h1>
         
+        <p style="font-size: 1.2rem; color: #0ff;">"Někdo vidí dlaždice, já vidím nekonečno." - Robin Macha</p>
+
         <a href="https://www.nature.org" target="_blank" class="nature-link">
-            🌿 POSLECHNI SI ZVUKY PŘÍRODY (INSPIRACE)
+            🌿 KLIKNI PRO ZVUKY PŘÍRODY (PRO LEPŠÍ ZÁŽITEK)
         </a>
 
-        <br>
-
-        <iframe src="wc_filozofie.pdf" width="100%" height="600px"></iframe>
-
-        <br>
-        <a href="index.html" class="back-btn">[ ZPĚT NA HLAVNÍ STRÁNKU ]</a>
+        <iframe src="wc_filozofie.pdf" width="100%" height="750px"></iframe>
+        
+        <p style="margin-top: 20px; color: #888; font-size: 0.8rem;">Robin Macha © 2026 - IVT Projekt</p>
     </div>
 
 </body>
